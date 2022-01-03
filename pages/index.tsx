@@ -1,17 +1,12 @@
 import type { NextPage } from "next";
-import MainLayout from "../layouts/MainLayout";
+import Intro from "./Intro/Intro";
+
+
+
 
 const Home: NextPage = () => {
-  
-
   return (
-    <MainLayout title="Intro" description="">
-      {/* Mehmet Yılmaz
-      Senior Frontend Developer
-
-      Turns user stories 
-      into working features. */}
-    </MainLayout>
+    <Intro />
   );
 };
 
