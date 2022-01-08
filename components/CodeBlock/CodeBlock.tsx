@@ -5,6 +5,7 @@ const code = `
     //Tech Stack
     const core = [ 'HTML', 'CSS', 'JavaScript']
     const candy = [ 'React', 'Redux', 'TypeScript', 'NextJS', 'Styled Components', 'Flutter']
+    
 `;
 
 // const CodeImage = styled(Image)`

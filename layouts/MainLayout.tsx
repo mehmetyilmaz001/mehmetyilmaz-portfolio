@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../style/GlobalStyle";
 import Header from "./components/Header";
 import Container from "./components/Container";
+import Game from "../components/Game/Game";
 
 interface MainLayoutProps {
   title: string;
@@ -36,7 +37,10 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({
       <main>
         <Container>{children}</Container>
       </main>
-      <footer></footer>
+      <footer>
+        <Game />
+
+      </footer>
     </>
   );
 };
