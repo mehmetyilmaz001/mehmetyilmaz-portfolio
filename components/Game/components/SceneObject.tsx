@@ -9,7 +9,7 @@ const leftScrolling = keyframes`
   0% {left: 100%;}
   100% {left: -50%;}`;
 
-const leftScrollAnimation = css` animation: ${leftScrolling} 50s linear infinite`
+const leftScrollAnimation = css` animation: ${leftScrolling} 95s linear infinite`
 
 export const SceneObjectListContainer = styled.div<{
     bottom?: number

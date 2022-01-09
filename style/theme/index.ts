@@ -12,6 +12,9 @@ const theme = {
     darkTheme,
     fonts: {
         adventPro: 'font-family: \'Advent Pro\', sans-serif;'
+    },
+    breakpoints: {
+        mobile: '600px',
     }
 }
 

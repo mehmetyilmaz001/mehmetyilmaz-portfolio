@@ -7,6 +7,11 @@ const IntroContainer = styled.div`
   justify-content: space-between;
   gap: 1.5rem;
   padding-top: 50px;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
 `;
 
 const MainTitle = styled.h1`
