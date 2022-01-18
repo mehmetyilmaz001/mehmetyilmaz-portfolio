@@ -5,7 +5,7 @@ import theme from "../../style/theme";
 
 interface NavProps {}
 
-const navItems = ["INTRO", "WHO", "WORK"];
+const navItems = ["HOME", "WHO", "WORK"];
 
 const NavContainer = styled.nav`
   ul {
@@ -58,7 +58,7 @@ const Nav: FunctionComponent<NavProps> = () => {
       <ul>
         {navItems.map((item, i) => (
           <li key={i}>
-            <Link href="/" passHref>
+            <Link href={item === 'HOME' ? '/' : item.toLowerCase()} passHref>
               {item}
             </Link>
             <div className="pointer">{'}'}</div>

@@ -24,8 +24,8 @@ const HeaderContainer = styled(Container)`
         width: 400px;
         height: 400px;
         background: radial-gradient(41.29% 41.29% at 39.17% 50.25%, #FFDC44 40.22%, #FFCF00 100%);
-        top: -54px;
-        left: -40px;
+        top: -114px;
+        left: -70px;
         z-index: -1;
     }
 `

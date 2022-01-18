@@ -37,9 +37,9 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({
       <main>
         <Container>{children}</Container>
       </main>
-      <footer>
+      <footer style={{textAlign: 'center'}}>
         <Game />
-
+        <span style={{fontSize: 11}}> © {new Date().getFullYear()} Mehmet Yılmaz </span>
       </footer>
     </>
   );

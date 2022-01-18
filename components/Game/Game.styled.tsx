@@ -33,14 +33,18 @@ const walkFrames = keyframes`
   100%{background-position: -405px;}
 `
 
-export const Character = styled.div.attrs<{x: number}>(props => ({
+interface CharacterProps {
+  jump: boolean,
+  x: number,
+  y: number
+}
+
+export const Character = styled.div.attrs<CharacterProps>(props => ({
   style: {
     left: props.x + "px",
+    top: props.y + "px",
   }
-}))<{
-  jump: boolean,
-  x: number
-}>`
+}))<CharacterProps>`
   /* border: solid 1px red; */
   background: url(${man.src}) no-repeat;
   width: 50px;
@@ -48,6 +52,7 @@ export const Character = styled.div.attrs<{x: number}>(props => ({
   position: absolute;
   bottom: 0;
   background-size: auto 90px;
+  transition: all .3s;
   /* ${({jump}) => jump && css`animation: ${jumpFrames} 500ms ease-in-out infinite, ${walkFrames}  5s linear infinite;`}  */
   
   animation: ${({jump}) => jump && css`${jumpFrames} 500ms infinite,`}  ${walkFrames} 1.2s steps(${({jump}) => jump ? 1 : 8}) infinite; 

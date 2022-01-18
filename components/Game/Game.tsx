@@ -44,11 +44,21 @@ interface GameProps {}
 //   </SceneObject>
 // ));
 
-const Game: FunctionComponent<GameProps> = () => {
-  const [charX, setCharX] = useState<number>(10);
-  const [jump, setJump] = useState(false);
-  const [ randomBox, setRandomBox ] = useState<string>(boxes[getRandomNumberBetween(0, boxes.length - 1)]);
+const charDefaultY = 130 - 90; // container height - character height
 
+const Game: FunctionComponent<GameProps> = () => {
+
+  const [charX, setCharX] = useState<number>(100);
+  const [charY, setCharY] = useState<number>(-2000);
+  const [jump, setJump] = useState(true);
+  // const [ randomBox, setRandomBox ] = useState<string>(boxes[getRandomNumberBetween(0, boxes.length - 1)]);
+
+  useEffect(() => {
+    setInterval(() => {
+      setCharY(charDefaultY);
+      setJump(false);
+    }, 1500);
+  }, [])
 
   const _jump = () => {
     setJump(true);
@@ -68,23 +78,23 @@ const Game: FunctionComponent<GameProps> = () => {
     setCharX(charX + 10);
   });
 
-  useInterval(() => {
-    setRandomBox(boxes[getRandomNumberBetween(0, boxes.length - 1)]);
-  }, 5000);
+  // useInterval(() => {
+  //   setRandomBox(boxes[getRandomNumberBetween(0, boxes.length - 1)]);
+  // }, 5000);
 
   return (
     <Container>
       
-      <Character jump={jump} x={charX} />
+      <Character jump={jump} x={charX} y={charY} />
 
-      <BoxContainer>
-      <Box size={10} x={200}>
-        {randomBox}
-      </Box>
-      <Box size={10} x={10}>
-        {randomBox}
-      </Box>
-      </BoxContainer>
+      {/* <BoxContainer>
+        <Box size={10} x={200}>
+          {randomBox}
+        </Box>
+        <Box size={10} x={10}>
+          {randomBox}
+        </Box>
+      </BoxContainer> */}
       <Ground />
     </Container>
   );
