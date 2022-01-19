@@ -1,8 +1,9 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext, useEffect } from "react";
 import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import MainLayout from "../../layouts/MainLayout";
 import Image from "next/image";
 import { IconContainer, IntroContainer, MainTitle, MessageTitle } from "./Intro.styled";
+import { SiteContext } from "../../context/SiteContext";
 
 const iconLinkList = [
     { name: "Github", url: "https://github.com/mehmetyilmaz001" },
@@ -16,6 +17,8 @@ const iconLinkList = [
 interface IntroProps {}
 
 const Intro: FunctionComponent<IntroProps> = () => {
+  const { setSelectedNav } = useContext(SiteContext);
+  useEffect(() => { setSelectedNav("HOME") }, [setSelectedNav]);
   return (
     <MainLayout title="Intro" description="">
       <IntroContainer>

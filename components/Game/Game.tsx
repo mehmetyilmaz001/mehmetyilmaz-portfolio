@@ -1,15 +1,6 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import Figure from "./components/Figure";
-import { Box, BoxContainer, Character, Container, Ground } from "./Game.styled";
-import Tree from "./assets/tree.svg";
-import Cloud from "./assets/cloud.svg";
-import Hill from "./assets/hill.svg";
-import { getRandomNumberBetween } from "../../helpers/MathHelper";
-import SceneObject, { SceneObjectListContainer } from "./components/SceneObject";
+import { Character, Container, Ground } from "./Game.styled";
 import useKeypress from "../../hooks/useKeyPress";
-import { cretaeRandomBoxIndex } from "./helpers";
-import useInterval from "../../hooks/useInterval";
-import { boxes } from "./constants";
 
 interface GameProps {}
 

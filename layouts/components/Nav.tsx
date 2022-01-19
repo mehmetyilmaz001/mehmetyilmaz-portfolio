@@ -1,11 +1,12 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import theme from "../../style/theme";
+import {SiteContext} from "../../context/SiteContext";
 
 interface NavProps {}
 
-const navItems = ["HOME", "WHO", "WORK"];
+export const navItems = ["HOME", "WHO", "WORK"];
 
 const NavContainer = styled.nav`
   ul {
@@ -34,7 +35,7 @@ const NavContainer = styled.nav`
         margin: auto;
       }
 
-      :hover {
+      :hover, &.selected {
           .pointer {
             opacity: 1;
           }
@@ -53,11 +54,12 @@ const NavContainer = styled.nav`
 `;
 
 const Nav: FunctionComponent<NavProps> = () => {
+  const { selectedNav } = useContext(SiteContext);
   return (
     <NavContainer>
       <ul>
         {navItems.map((item, i) => (
-          <li key={i}>
+          <li key={i} className={selectedNav === item ? "selected": ""}>
             <Link href={item === 'HOME' ? '/' : item.toLowerCase()} passHref>
               {item}
             </Link>

@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext, useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
 import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import {SiteContext} from "../../context/SiteContext";
 
 
 interface WhoProps {}
@@ -12,8 +13,10 @@ const ProfilePic = styled(Image)`
 `
 
 const Who: FunctionComponent<WhoProps> = () => {
+  const { setSelectedNav } = useContext(SiteContext);
+  useEffect(() => { setSelectedNav("WHO") }, [setSelectedNav]);
   return (
-    <MainLayout title="Who" description="">
+    <MainLayout title="Who" description="Mehmet is a Senior React Frontend Developer">
       <article style={{ fontSize: 20, padding: 20, lineHeight:1.5, textAlign: "center" }}>
         <ProfilePic
           width={348}
