@@ -1,5 +1,5 @@
 import { getRandomNumberBetween } from "../../helpers/MathHelper";
-import { boxes } from "./constants";
+import { boxes } from "./Constants";
 
 export const cretaeRandomBoxIndex = () => {
     const randomIndex = getRandomNumberBetween(10, boxes.length);

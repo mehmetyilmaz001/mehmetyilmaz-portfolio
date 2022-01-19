@@ -2,8 +2,11 @@ import { FunctionComponent, useContext, useEffect } from "react";
 import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import MainLayout from "../../layouts/MainLayout";
 import Image from "next/image";
-import { IconContainer, IntroContainer, MainTitle, MessageTitle } from "./Intro.styled";
 import { SiteContext } from "../../context/SiteContext";
+import IntroContainer from "./components/IntroContainer";
+import MainTitle from "./components/MainTitle";
+import MessageTitle from "./components/MessageTitle";
+import IconContainer from "./components/IconContainer";
 
 const iconLinkList = [
     { name: "Github", url: "https://github.com/mehmetyilmaz001" },
