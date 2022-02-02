@@ -42,6 +42,7 @@ const Intro: FunctionComponent<IntroProps> = () => {
                 <Image
                   width={30}
                   height={30}
+                  priority={true}
                   src={`/images/icons/${link.name
                     .toLowerCase()
                     .replace(/\s/g, "")}.svg`}

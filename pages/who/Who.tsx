@@ -15,17 +15,19 @@ const ProfilePic = styled(Image)`
 const Who: FunctionComponent<WhoProps> = () => {
   const { setSelectedNav } = useContext(SiteContext);
   useEffect(() => { setSelectedNav("WHO") }, [setSelectedNav]);
+
   return (
     <MainLayout title="Who" description="Mehmet is a Senior React Frontend Developer">
       <article style={{ fontSize: 20, padding: 20, lineHeight:1.5, textAlign: "center" }}>
         <ProfilePic
           width={348}
           height={289}
+          priority={true}
           src="/images/my.png"
           alt="Mehmet Yılmaz Senior Frontend Developer"
         />
         <motion.p  
-          initial="hidden"
+          initial={false}
           animate="show">
           Hi! I&apos;m Mehmet and I&apos;m a Senior Frontend Developer who has about ten years of
           experience.
